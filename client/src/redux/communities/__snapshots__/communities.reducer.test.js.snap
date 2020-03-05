@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`communitiesReducer should return the initial state 1`] = `
+Object {
+  "averages": null,
+  "communities": null,
+}
+`;
