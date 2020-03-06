@@ -89,16 +89,43 @@ describe('communitiesReducer', () => {
 
     it('should handle FETCH_AVERAGE', () => {
         const mockItems = [
-            ["56e20c00-805b-44b7-831f-f33e50edd54e",400000],
-            ["d24af356-a2b4-4c98-be10-329a3d9edac2",943595],
-            ["1f161dcd-1221-4b0f-9ced-1498807cca55",333334],
-            ["84666941-c1b9-43a8-82a0-dbc3a82862c4",572670],
-            ["a75e7343-23f3-45c4-a1a4-e88746b11ebf",685965],
-            ["86b42a15-1a35-4819-8646-6719ea275ecf",768960],
-            ["7fccecd9-d246-4681-84e9-a92861999c20",500000],
-            ["af2c8ca7-e3bb-4c8f-8f40-1f6156f4d7c4",399000],
-            ["20244d9f-8147-4633-9b29-4c0ec5a762a9",354430]
-        ];
+          {
+          "id": "56e20c00-805b-44b7-831f-f33e50edd54e",
+          "averagePrice": 400000
+          },
+          {
+          "id": "d24af356-a2b4-4c98-be10-329a3d9edac2",
+          "averagePrice": 943595
+          },
+          {
+          "id": "1f161dcd-1221-4b0f-9ced-1498807cca55",
+          "averagePrice": 333334
+          },
+          {
+          "id": "84666941-c1b9-43a8-82a0-dbc3a82862c4",
+          "averagePrice": 572670
+          },
+          {
+          "id": "a75e7343-23f3-45c4-a1a4-e88746b11ebf",
+          "averagePrice": 685965
+          },
+          {
+          "id": "86b42a15-1a35-4819-8646-6719ea275ecf",
+          "averagePrice": 768960
+          },
+          {
+          "id": "7fccecd9-d246-4681-84e9-a92861999c20",
+          "averagePrice": 500000
+          },
+          {
+          "id": "af2c8ca7-e3bb-4c8f-8f40-1f6156f4d7c4",
+          "averagePrice": 399000
+          },
+          {
+          "id": "20244d9f-8147-4633-9b29-4c0ec5a762a9",
+          "averagePrice": 354430
+          }
+          ];
           expect(
             communitiesReducer(INITIAL_STATE,
             {

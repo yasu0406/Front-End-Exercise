@@ -33,10 +33,10 @@ const CommunitiesList = (props) => {
                                 {group}
                                 </Card.Text>
                                 {
-                                    props.communities.averages.filter(average => average[0] === id).map(average => {
+                                    props.communities.averages.filter(average => average.id === id).map(average => {
                                         return(
                                             <Card.Text>
-                                                Average Price <strong>${average[1]}</strong>
+                                                Average Price <strong>${average.averagePrice}</strong>
                                             </Card.Text>
                                         )
                                     })
@@ -60,7 +60,6 @@ const CommunitiesList = (props) => {
 };
 
 const mapStateToProps = state => {
-    console.log(state);
     return {
         communities: state.communities,
         averages: state.communities.averages

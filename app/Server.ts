@@ -28,15 +28,23 @@ export class Server {
             axios.get('https://a18fda49-215e-47d1-9dc6-c6136a04a33a.mock.pstmn.io/homes')
             .then(response => {
                 let prices = {};
-                let average = new Map();
+                let averageMap = new Map();
+                const average = [];
                   response.data.forEach((home) => {
                     prices[home.communityId] ? prices[home.communityId].push(home.price) : prices[home.communityId] = [home.price];
                   });
+
+                  // Calc price to average and change hashmap to object
                   for (var key in prices) {
                     var sum = prices[key].reduce((a,x) => a+=x,0);
-                    average.set(key, Math.ceil(sum / prices[key].length));
-                  }
-                res.status(200).send(JSON.stringify([...average]));
+                    averageMap.set('id', key).set('averagePrice', Math.ceil(sum / prices[key].length));
+                    const objAverage = [...averageMap].reduce((o, [k, v])=>{
+                        o[k] = v;
+                        return o;
+                        }, {});
+                    average.push(Object.assign(objAverage,{}));
+                  };
+                res.status(200).send(Object.values(average));
             })
             .catch(error => {
                 res.status(500).send();
